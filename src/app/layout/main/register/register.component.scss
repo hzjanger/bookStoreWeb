@@ -1,0 +1,23 @@
+.container-fluid{
+  background: url("../../../../assets/img/ban.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+h1{
+  font-size: 3.5em;
+  color: #fff;
+  text-align: center;
+  margin: 1.5em 0em 1em 0em;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 3px;
+}
+
+.login-box{
+  background-color: rgba(255, 255, 255, 0.45);
+  padding: 2.5rem 3rem 2rem 3rem;
+}
+
+
+.active {
+  display: block;
+}

@@ -1,0 +1,65 @@
+.search{
+  width: 40%;
+  position: relative;
+}
+.search-form{
+  position: absolute;
+  top: 50%;
+}
+
+.form-control-overrite{
+  display: inline-block;
+  width: 75%;
+  margin: .5rem .2rem;
+}
+.search-button{
+  width: 12%;
+  margin: .5rem .2rem;
+}
+.nav-overrite{
+  padding: .5rem 1rem;
+}
+.nav .nav-link{
+  color: #000;
+}
+.nav .nav-link:hover{
+  color: #007bff;
+}
+.nav .nav-link{
+  padding: 0.5rem 0.8rem;
+}
+.nav .nav-line{
+  color: #efefef;
+  display: block;
+  padding: 0.5rem 0rem;
+}
+
+
+.search-value {
+  margin-top: 2rem;
+}
+
+.book-list {
+  margin-top: 1.5rem;
+}
+
+.search-amount {
+  font-size: 1rem;
+  color: #ccc;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #EAEEF1;
+}
+
+.reviews {
+  color: #9F7474;
+  margin-left: .5rem;
+}
+
+.author {
+  color: #999999;
+  font-size: .9rem;
+}
+
+.book-list .col-11 p {
+  margin-bottom: .6rem;
+}
