@@ -11,7 +11,7 @@
           <div class="col-4 col-sm-3" *ngFor="let newBookInfo of newBookInfoes">
             <div class="new-book-img-box">
               <img src="{{newBookInfo.imgurl}}" referrerpolicy="never">
-              <p><a href="#" matTooltip="{{newBookInfo.bookName}}">{{newBookInfo.bookName}}</a></p>
+              <p><a routerLink="search" matTooltip="{{newBookInfo.bookName}}">{{newBookInfo.bookName}}</a></p>
               <p matTooltip="{{newBookInfo.author}}">{{newBookInfo.author}}</p>
             </div>
           </div>
