@@ -1,22 +1,33 @@
 <div class="nav-background">
   <div class="container">
     <div class="row">
-      <div class="col-8">
+      <div class="col-7">
         <div class="full">
-          <div class="login-box">
-            <img src="assets/img/lg_book_a11_1.png">
+          <div class="logo-box">
+            <a href="#" class="navbar-brand">豆瓣读书</a>
           </div>
-          <form>
-            <input type="text" placeholder="书名、作者、ISBN">
-            <i>搜索</i>
+          <form class="form-group full nav-form">
+            <input class="form-control nav-search" type="text" placeholder="">
+            <button class="search-btn" type="submit"><mat-icon>search</mat-icon></button>
           </form>
         </div>
-
       </div>
-      <div class="col-4">
-        <div *ngIf="!login">
-          <a>登录</a>
-          <a>注册</a>
+      <div class="col-5">
+        <div *ngIf="!login" class="full menu">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="#" class="nav-link">电子图书</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">购物车</a>
+            </li>
+            <li class="nav-item login">
+              <a href="#" class="nav-link">登录</a>
+            </li>
+            <li class="nav-item login">
+              <a href="#" class="nav-link">注册</a>
+            </li>
+          </ul>
         </div>
         <div *ngIf="login">
           已登录
@@ -25,50 +36,3 @@
     </div>
   </div>
 </div>
-
-<!--<div class="bg-light head-box">-->
-  <!--<div class="container">-->
-    <!--<div class="row">-->
-      <!--<div class="col-4 col-sm-7 col-md-2 col-lg-2">-->
-        <!--<a class="nav-logo" href="javaScript:;">豆瓣读书</a>-->
-      <!--</div>-->
-      <!--<div class="col-md-6 col-lg-6 hidden">-->
-        <!--<form action="/search" method="get">-->
-          <!--<input type="text" class="form-control form-control-overrite" id="usr" name="key" placeholder="书籍名、作者名">-->
-          <!--<input type="text" name="type" style="display: none;" value="search">-->
-          <!--<button type="submit" class="btn btn-primary search-button">搜索</button>-->
-        <!--</form>-->
-      <!--</div>-->
-      <!--<div class="col-8 col-sm-5 col-md-4 col-lg-4">-->
-        <!--<ul class="nav text-dark justify-content-end nav-overrite">-->
-          <!--<li class="nav-item">-->
-            <!--<a class="nav-link" href="login.html">登录</a>-->
-          <!--</li>-->
-          <!--<li class="head-line">-->
-            <!--<span class="nav-line">|</span>-->
-          <!--</li>-->
-          <!--<li class="nav-item">-->
-            <!--<a class="nav-link" href="register.html">免费注册</a>-->
-          <!--</li>-->
-        <!--</ul>-->
-      <!--</div>-->
-      <!--<div class="col-8 col-sm-5 col-md-4 col-lg-4" style="display: none;">-->
-        <!--<div class="row">-->
-          <!--<div class="col-8"></div>-->
-          <!--<div class="col-4">-->
-            <!--<img src="user_img" id="head-img" class="img-fluid rounded-circle nav-img"  style="max-width: 50px">-->
-            <!--<a class="nav-link dropdown-toggle" role="button" id="dropdownMenuLink" style="display: none;"><%=useName%></a>-->
-            <!--<ul class="nav menu-nav none bg-white" style="position: absolute;">-->
-              <!--<li class="nav-item">-->
-                <!--<a class="nav-link person-center" href="#">个人中心</a>-->
-              <!--</li>-->
-              <!--<li class="nav-item">-->
-                <!--<a class="nav-link" href="/quit">退出登录</a>-->
-              <!--</li>-->
-            <!--</ul>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->

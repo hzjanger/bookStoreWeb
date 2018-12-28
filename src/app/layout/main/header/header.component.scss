@@ -1,6 +1,6 @@
 .nav-background {
   background: #f6f6f1;
-  padding: 1rem;
+  padding-top: 1rem;
   border-bottom: 1px solid #e5ebe4;
 }
 
@@ -9,113 +9,47 @@
   flex: 1;
 }
 
+.logo-box {
+  width: 9.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
 
-//.head-box .nav-logo {
-//  color: #614e3c;
-//  font-size: 1.75rem;
-//  font-weight: 600;
-//  text-decoration: none;
-//}
-//
-//.head {
-//  margin-top: 1rem;
-//  padding-bottom: .6rem;
-//  border-bottom: 1px solid #DDDDDD;
-//}
-//
-//.new-book {
-//  font-size: 1.2rem;
-//  font-weight: 500;
-//}
-//
-//.card-overrite {
-//  border: 0;
-//  padding: .5rem;
-//}
-//
-//.nav .nav-link-overrite {
-//  background-color: #F5F5F5;
-//  color: #007bff;
-//  margin: 2px;
-//
-//}
-//
-//.nav .nav-link-overrite:hover {
-//  background-color: #EFEFEF;
-//  color: #007bff;
-//}
-//
-//.assess,.reviews {
-//  color: #666;
-//  font-size: .9rem;
-//}
-//
-//.book-name {
-//  font-size: 1rem;
-//}
-//.author {
-//  color: #666;
-//  padding-right: .5rem;
-//}
-//
-//.assess-book-name {
-//  color: #666666;
-//  padding: 0 .5rem 0 .5rem;
-//}
-//
-//.sell-well-book .ul-nav {
-//  padding: 0;
-//  margin: 0;
-//  list-style: none;
-//}
-//.sell-well-book .ul-nav .ul-nav-item {
-//  border-bottom: 1px dashed #ddd;;
-//}
-//
-//.sell-well-book .ul-nav-item {
-//  padding: .4rem .4rem 0 .4rem;
-//}
-//
-//.sell-well-book .ul-nav-item .author {
-//  margin-top: .3rem;
-//}
-//
-//.sell-well-book .ul-nav-item:hover {
-//  background-color: #f9f9f6;
-//}
-//
-//.search{
-//  width: 40%;
-//  position: relative;
-//}
-//.search-form{
-//  position: absolute;
-//  top: 50%;
-//}
-//
-//.form-control-overrite{
-//  display: inline-block;
-//  width: 75%;
-//  margin: .5rem .2rem;
-//}
-//.search-button{
-//  width: 12%;
-//  margin: .5rem .2rem;
-//}
-//.nav-overrite{
-//  padding: .5rem 1rem;
-//}
-//.nav .nav-link{
-//  color: #000;
-//}
-//.nav .nav-link:hover{
-//  color: #007bff;
-//}
-//.nav .nav-link{
-//  padding: 0.5rem 0.8rem;
-//}
-//.nav .nav-line{
-//  color: #efefef;
-//  display: block;
-//  padding: 0.5rem 0rem;
-//}
+.logo-box .navbar-brand {
+  color: #614e3c;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-form .nav-search {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  outline: none;
+
+}
+
+.search-btn {
+  border: 0;
+  height: calc(2.25rem + 2px);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+}
+
+.menu {
+  justify-content: flex-end;
+}
+
+.menu a {
+  color: #000;
+}
+
+.menu a:hover {
+  color: #ff0000;
+  text-decoration: none;
+}

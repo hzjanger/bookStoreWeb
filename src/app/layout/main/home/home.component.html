@@ -1,273 +1,85 @@
 <div class="bg-white">
   <div class="container">
     <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-8">
-        <!--推荐书籍-->
-        <h2 class="head">
-          <span class="new-book">推荐书籍</span>
+      <!--主页左边部分-->
+      <div class="col-sm-12 col-md-12 my-col-lg-7-4">
+        <!--新书速递-->
+        <h2 class="head-title">
+          <span class="new-book">新书速递</span>
         </h2>
         <div class="row">
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4 col-sm-3">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/30197648/?icn=index-editionrecommend">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29909506.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="/subject/<%=recommend_book.getISBN()%>">时间杀手</a>
-                </div>
-              </div>
+          <div class="col-4 col-sm-3" *ngFor="let newBookInfo of newBookInfoes">
+            <div class="new-book-img-box">
+              <img src="{{newBookInfo.imgurl}}" referrerpolicy="never">
+              <p><a href="#" matTooltip="{{newBookInfo.bookName}}">{{newBookInfo.bookName}}</a></p>
+              <p matTooltip="{{newBookInfo.author}}">{{newBookInfo.author}}</p>
             </div>
           </div>
         </div>
         <!--最受关注图书榜-->
-        <h2 class="head">
+        <h2 class="head-title">
           <span class="new-book">最受关注图书榜</span>
         </h2>
         <div class="row">
-          <div class="col-6">
-            <div class="row">
-              <div class="col-5">
-                <a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">
-                  <img src="https://img3.doubanio.com/view/subject/m/public/s29890136.jpg" class="img-fluid" referrerpolicy="never">
-                </a>
+          <div class="col-6" *ngFor="let focusOnBookInfo of focusOnBookInfoes">
+            <div class="focus-on">
+              <div class="focus-on-img-box">
+                <img src="{{focusOnBookInfo.imgUrl}}" referrerpolicy="never">
               </div>
-              <div class="col-7">
-                <p><a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">回答不了</a></p>
-                <p>
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star-half-o" aria-hidden="true"></i>-->
-                  8.9
+              <div class="focus-on-books-info">
+                <p class="book-name">{{focusOnBookInfo.bookName}}</p>
+                <p class="rate">
+                  <ngb-rating [rate]="focusOnBookInfo.rate"></ngb-rating>
+                  <span>{{focusOnBookInfo.rate}}</span>
                 </p>
-                <p>作者：匡扶</p>
-                <p>毛姆 / 短篇小说 </p>
-              </div>
-            </div>
-            <div class="row" style="margin-top: .7rem;margin-bottom: .7rem;">
-              <div class="col-12" style="padding-right: 1rem;">
-                <p class="reviews">喜欢与短篇小说中的毛姆叔叔做朋友，走进书页中，听他诉说一个个离奇浪漫的事件，然后无拘无束得开怀大笑。 (二呆评论) </p>
+                <p>作者：{{focusOnBookInfo.author}}</p>
+                <p>{{focusOnBookInfo.type}}</p>
               </div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="row">
-              <div class="col-5">
-                <a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">
-                  <img src="https://img3.doubanio.com/view/subject/m/public/s29890136.jpg" class="img-fluid" referrerpolicy="never">
-                </a>
-              </div>
-              <div class="col-7">
-                <p><a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">回答不了</a></p>
-                <p>
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star-half-o" aria-hidden="true"></i>-->
-                  8.9
-                </p>
-                <p>作者：匡扶</p>
-                <p>毛姆 / 短篇小说 </p>
-              </div>
-            </div>
-            <div class="row" style="margin-top: .7rem;margin-bottom: .7rem;">
-              <div class="col-12" style="padding-right: 1rem;">
-                <p class="reviews">喜欢与短篇小说中的毛姆叔叔做朋友，走进书页中，听他诉说一个个离奇浪漫的事件，然后无拘无束得开怀大笑。 (二呆评论) </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="row">
-              <div class="col-5">
-                <a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">
-                  <img src="https://img3.doubanio.com/view/subject/m/public/s29890136.jpg" class="img-fluid" referrerpolicy="never">
-                </a>
-              </div>
-              <div class="col-7">
-                <p><a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">回答不了</a></p>
-                <p>
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star-half-o" aria-hidden="true"></i>-->
-                  8.9
-                </p>
-                <p>作者：匡扶</p>
-                <p>毛姆 / 短篇小说 </p>
-              </div>
-            </div>
-            <div class="row" style="margin-top: .7rem;margin-bottom: .7rem;">
-              <div class="col-12" style="padding-right: 1rem;">
-                <p class="reviews">喜欢与短篇小说中的毛姆叔叔做朋友，走进书页中，听他诉说一个个离奇浪漫的事件，然后无拘无束得开怀大笑。 (二呆评论) </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="row">
-              <div class="col-5">
-                <a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">
-                  <img src="https://img3.doubanio.com/view/subject/m/public/s29890136.jpg" class="img-fluid" referrerpolicy="never">
-                </a>
-              </div>
-              <div class="col-7">
-                <p><a href="https://book.douban.com/subject/30336863/?icn=index-topchart-subject">回答不了</a></p>
-                <p>
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star" aria-hidden="true"></i>-->
-                  <!--<i class="fa fa-star-half-o" aria-hidden="true"></i>-->
-                  8.9
-                </p>
-                <p>作者：匡扶</p>
-                <p>毛姆 / 短篇小说 </p>
-              </div>
-            </div>
-            <div class="row" style="margin-top: .7rem;margin-bottom: .7rem;">
-              <div class="col-12" style="padding-right: 1rem;">
-                <p class="reviews">喜欢与短篇小说中的毛姆叔叔做朋友，走进书页中，听他诉说一个个离奇浪漫的事件，然后无拘无束得开怀大笑。 (二呆评论) </p>
-              </div>
+        </div>
+        <!--电子图书-->
+        <h2 class="head-title">
+          <span class="new-book">电子图书</span>
+        </h2>
+        <div class="row">
+          <div class="col-4 col-sm-3" *ngFor="let eBookInfo of eBookInfoes">
+            <div class="new-book-img-box">
+              <img src="{{eBookInfo.imgurl}}" referrerpolicy="never">
+              <p><a href="#" matTooltip="{{eBookInfo.bookName}}">{{eBookInfo.bookName}}</a></p>
+              <p matTooltip="{{eBookInfo.price}}">{{eBookInfo.price}}</p>
             </div>
           </div>
         </div>
       </div>
+      <!--主页右边部分-->
       <div class="col-sm-12 col-md-12 col-lg-4">
-        <h2 class="head">
-          <span class="new-book">畅销图书榜</span>
+        <!--热门标签-->
+        <h2 class="head-title">
+          <p class="new-book">热门标签</p>
         </h2>
-        <div class="sell-well-book">
-          <ul class="ul-nav">
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-            <li class="ul-nav-item">
-              <a href="https://book.douban.com/subject/4913064/">活着</a>
-              <p class="author">余华</p>
-            </li>
-          </ul>
+        <div class="label-box">
+          <div class="tag-box" *ngFor="let tag of tages">
+            <p style="margin: .5rem 0;">{{tag.tag_title}}</p>
+            <div class="tag-type">
+              <a href="#" *ngFor="let tag_value of tag.tag_value">{{tag_value}}</a>
+            </div>
+          </div>
         </div>
-        <h2 class="head">
+        <!--畅销图书榜-->
+        <!--<h2 class="head-title">-->
+          <!--<span class="new-book">畅销图书榜</span>-->
+        <!--</h2>-->
+        <!--<div class="sell-well-book">-->
+          <!--<ul class="ul-nav">-->
+            <!--<li class="ul-nav-item">-->
+              <!--<a href="https://book.douban.com/subject/4913064/">活着</a>-->
+              <!--<p class="author">余华</p>-->
+              <!--<p class=""></p>-->
+            <!--</li>-->
+          <!--</ul>-->
+        <!--</div>-->
+        <h2 class="head-title">
           <span class="new-book">豆瓣图书250</span>
         </h2>
         <div class="row">

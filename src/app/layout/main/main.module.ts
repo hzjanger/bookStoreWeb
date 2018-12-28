@@ -8,11 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {MatButtonModule} from '@angular/material';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    MatButtonModule,
+    SharedModule
   ],
   declarations: [
     LoginComponent,

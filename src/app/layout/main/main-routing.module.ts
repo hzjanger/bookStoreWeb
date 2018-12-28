@@ -4,11 +4,13 @@ import {HomeComponent} from './home/home.component';
 import {MainComponent} from './main.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
+import {SearchComponent} from './search/search.component';
 
 
 const mainRoutes: Routes = [
   {path: '', component: MainComponent, children: [
-      { path: '', component: HomeComponent}
+      { path: '', component: HomeComponent},
+      { path: 'search', component: SearchComponent}
     ]
   },
   { path: 'login', component: LoginComponent},
