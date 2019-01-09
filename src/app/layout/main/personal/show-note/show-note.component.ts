@@ -14,7 +14,9 @@ import {BookService} from '../../../../service/book.service';
 })
 export class ShowNoteComponent implements OnInit {
 
+  //存储笔记信息
   bookNote: BookNote = new BookNote();
+  //存储书籍信息
   book: Book = new Book();
   constructor(private bookNoteService: BookNoteService,
               private router: Router,
@@ -26,15 +28,17 @@ export class ShowNoteComponent implements OnInit {
       .subscribe((param: Params) => {
         //isbn=9781451578270&note_title=水电费水电费发斯蒂芬
         this.bookNote.isbn = param['isbn'];
-        this.bookNote.note_title = param['note_title'];
+        this.bookNote.noteId = param['noteId'];
         this.bookNote.user_id = +localStorage.getItem("userId");
         this.findOneNote();
       })
   }
 
-  //用户id， isbn， 文字标题
+  /**
+   * 查找笔记信息, 通过笔记的主键查找
+   */
   findOneNote() {
-    this.bookNoteService.findOneNote(this.bookNote)
+    this.bookNoteService.findNoteByNoteId(this.bookNote.noteId)
       .subscribe((data: BookNote) => {
         this.bookNote = data;
         this.findOneBook(this.bookNote.isbn);
@@ -42,11 +46,27 @@ export class ShowNoteComponent implements OnInit {
       })
   }
 
+  /**
+   * 查找书籍细信息
+   * @param isbn
+   */
   findOneBook(isbn: string) {
     this.bookService.findOneBook(isbn)
       .subscribe((data: Book) => {
         this.book = data;
       })
+  }
+
+  /**
+   * 点击编辑, 跳转到Note编辑页面
+   */
+  editorNote() {
+    this.router.navigate(['/note'],{
+      queryParams: {
+        isbn: this.bookNote.isbn,
+        type: this.bookNote.noteId
+      }
+    })
   }
 
 

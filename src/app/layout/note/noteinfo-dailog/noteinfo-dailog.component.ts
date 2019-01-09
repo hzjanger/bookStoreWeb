@@ -56,8 +56,7 @@ user_id: 8
   }
 
   saveNote() {
-    console.log(this.bookNoteFrom.value);
-    this.dialogRef.close(this.bookNoteFrom.value)
+    this.dialogRef.close({"beginPage": this.beginPage, "endPage": this.endPage, "bookChapter": this.bookChapter})
 
   }
 }

@@ -42,7 +42,6 @@ export class BookNoteService {
   findOneNote(bookNote: BookNote) {
     return this.http.post(this.url + `/findOneNote`, bookNote)
   }
-
   /**
    * 更新书籍信息
    * @param bookNote

@@ -6,9 +6,9 @@
         <span class="time">{{bookNote.createTime | date: 'yyyy年MM月dd日 HH:mm:ss'}}</span>
         <span class="book-name">{{book.book_name}}</span>
         <span class="page">第{{bookNote.begain_page}}页到第{{bookNote.end_page}}页</span>
-        <span class="chapter">{{bookNote.book_chapter}}</span>
+        <span class="chapter">章节名: {{bookNote.book_chapter}}</span>
       </div>
-      <span class="article-info-right">编辑</span>
+      <span class="article-info-editor" (click)="editorNote()">编辑</span>
     </div>
   </div>
   <div [innerHTML]="bookNote.noteHtml | html"></div>

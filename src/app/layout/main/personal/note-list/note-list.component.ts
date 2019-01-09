@@ -72,7 +72,7 @@ export class NoteListComponent implements OnInit {
     this.router.navigate(['/shownote'], {
       queryParams: {
         isbn: bookNote.isbn,
-        note_title: bookNote.note_title
+        noteId: bookNote.noteId
       }
     })
   }

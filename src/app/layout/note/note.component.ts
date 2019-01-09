@@ -100,6 +100,7 @@ export class NoteComponent implements OnInit {
    * 点击保存笔记
    */
   saveNote() {
+    console.log(this.bookNote);
     const dialogRef = this.dialog.open(NoteinfoDailogComponent, {
       width: '45%',
       data: {
@@ -109,10 +110,11 @@ export class NoteComponent implements OnInit {
     });
     dialogRef.afterClosed()
       .subscribe(data => {
+        console.log(data);
         if (data) {
-          this.bookNote.begain_page = +data.begin_page;
-          this.bookNote.book_chapter = data.book_chapter;
-          this.bookNote.end_page = +data.end_page;
+          this.bookNote.begain_page = data.beginPage;
+          this.bookNote.book_chapter = data.bookChapter;
+          this.bookNote.end_page = data.endPage;
           this.bookNote.user_id = +localStorage.getItem('userId');
           this.bookNote.isbn = this.isbn;
           this.bookNote.note_value = this.markdown;
@@ -128,7 +130,14 @@ export class NoteComponent implements OnInit {
                 this.router.navigate(['/personal']);
               })
           } else {
-
+            this.bookNoteService.updateNote(this.bookNote)
+              .subscribe(data => {
+                this.snackBar.open('更新成功', 'close', {
+                  duration: 2000
+                });
+                console.log(data);
+                this.router.navigate(['/personal']);
+              })
           }
 
         }
