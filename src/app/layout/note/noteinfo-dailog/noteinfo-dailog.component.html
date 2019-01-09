@@ -1,0 +1,27 @@
+<h5 mat-dialog-title>书籍名称： {{bookName}}</h5>
+<mat-dialog-content>
+  <form [formGroup]="bookNoteFrom">
+    <div>
+      开始页数:
+      <mat-form-field>
+        <input matInput formControlName="begin_page" value="{{beginPage}}">
+      </mat-form-field>
+      截止页数:
+      <mat-form-field>
+        <input matInput formControlName="end_page" value="{{endPage}}">
+      </mat-form-field>
+    </div>
+    <div class="book-chapter">
+      <span>章节名称:</span>
+      <mat-form-field>
+        <input matInput formControlName="book_chapter" value="{{bookChapter}}">
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="d-flex justify-content-end flex-fill">
+    <button mat-button mat-dialog-close>取消</button>
+    <button mat-button (click)="saveNote()">保存</button>
+  </div>
+</mat-dialog-actions>

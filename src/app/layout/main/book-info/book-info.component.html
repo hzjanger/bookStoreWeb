@@ -1,0 +1,88 @@
+<!--<a [routerLink]="['/bookinfo', '123456789']">这是a</a><br>-->
+<!--<a [routerLink]="['/bookinfo', '987654321']">这是b</a>-->
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="book-info-box" *ngIf="bookInfo">
+        <h2 class="book-name">{{bookInfo.book_name}}</h2>
+        <div class="content">
+          <div class="book-info-img-box">
+            <img src="{{bookInfo.book_img}}" referrerpolicy ="never" alt="图书" class="img-fluid">
+          </div>
+          <div class="book-info">
+            <p>作者: <a [routerLink]="['/search']" [queryParams]="{author: bookInfo.book_author}" class="author">{{bookInfo.book_author}}</a></p>
+            <p>出版社: <span>{{bookInfo.book_press}}</span></p>
+            <p *ngIf="bookInfo.book_translator != ''">译者: <a href="#">{{bookInfo.book_translator}}</a></p>
+            <p>出版年: <span>{{bookInfo.publisher_time}}</span></p>
+            <p>页数: <span>{{bookInfo.book_page}}</span></p>
+            <p>装帧: <span>{{bookInfo.book_binding}}</span></p>
+            <p>ISBN: <span>{{bookInfo.isbn}}</span></p>
+          </div>
+        </div>
+        <div class="interest_sect_level" *ngIf="!isCollection">
+          <button mat-button (click)="openCollectionDialog('想读')">想读</button>
+          <button mat-button (click)="openCollectionDialog('在读')">在读</button>
+          <button mat-button (click)="openCollectionDialog('读过')">读过</button>
+        </div>
+        <div *ngIf="isCollection" class="my-collection">
+          <div class="collection-info">
+            <div>
+              <span *ngIf="book_state_type === '想读'">我想读这本书</span>
+              <span *ngIf="book_state_type === '在读'">我最近在读这本书</span>
+              <span *ngIf="book_state_type === '读过'">我读过这本书 </span>
+            </div>
+            <span>{{command_time | date:'yyyy-MM-dd'}}</span>
+            <button mat-button (click)="updateBookCollection()">修改</button>
+            <button mat-button (click)="deleteByUserIdAndISBN()">删除</button>
+          </div>
+          <div *ngIf="book_state_type != '想读'" class="collection-command">我的评价: <ngb-rating [(rate)]="command_grade"
+                                 [max]="5"
+                                 [readonly]="true"></ngb-rating>
+            <span>{{rateValue}}</span>
+          </div>
+          <div *ngIf="book_short_command != ''" class="short_note">简短附注: {{book_short_command}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="book_introduction">
+    <!--内容简介-->
+    <div class="related_info">
+      <div class="col-12">
+        <p class="introduction">内容简介  · · · · · · </p>
+      </div>
+      <div class="col-12 introduction-container">
+        <p class="text-indent" *ngFor="let bookIntroduction of book_introduction">{{bookIntroduction}}</p>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="row" *ngIf="author_introduction">
+    <!--作者简介-->
+    <div class="related_info">
+      <div class="col-12">
+        <p class="introduction">作者简介  · · · · · · </p>
+      </div>
+      <div class="col-12 introduction-container">
+        <p class="text-indent" *ngFor="let authorIntroduction of author_introduction">{{authorIntroduction}}</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="row" *ngIf="book_direction">
+    <!--目录-->
+    <div class="related_info">
+      <div class="col-12">
+        <p class="introduction">目录  · · · · · · </p>
+      </div>
+      <div class="col-12 introduction-container">
+        <p *ngFor="let direction of book_direction; let i = index"><span *ngIf="i < 10 || directoryShowMore">{{direction}}</span></p>
+        <div class="showmore" *ngIf="!directoryShowMore" (click)="directoryShowMore = true;">· · · · · · (显示更多)</div>
+        <div class="showmore" *ngIf="directoryShowMore" (click)="directoryShowMore = false">· · · · · · (收起)</div>
+      </div>
+    </div>
+
+  </div>
+</div>

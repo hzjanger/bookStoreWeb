@@ -1,0 +1,47 @@
+<div class="my-course-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 my-course-header-left">
+        <img src="assets/img/avatar/avatar01.jpg" class="img-fluid img-thumbnail my-course-avatar">
+        <div class="personal-info">
+          <h4>慕少123456</h4>
+          <P>保密</P>
+          <p>这位同学很懒, 木有签名的说~</p>
+        </div>
+      </div>
+      <div class="col-6 my-course-header-right">
+        <div>个人设置</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <!--<div class="col-2 course-menu-box">-->
+      <!--<mat-nav-list>-->
+        <!--<mat-list-item *ngFor="let item of course_menu" [routerLink]="item.link">-->
+          <!--<mat-icon matListIcon [svgIcon]="item.icon"></mat-icon>-->
+          <!--<span mat-line>{{item.value}}</span>-->
+        <!--</mat-list-item>-->
+      <!--</mat-nav-list>-->
+    <!--</div>-->
+    <!--<div class="col-9">-->
+      <!--<router-outlet></router-outlet>-->
+    <!--</div>-->
+
+
+  </div>
+  <div class="menu">
+    <mat-tab-group>
+      <mat-tab label="笔记"><app-note-list></app-note-list></mat-tab>
+      <mat-tab label="想读"><app-want-read></app-want-read></mat-tab>
+      <mat-tab label="在读"><app-reading></app-reading></mat-tab>
+      <mat-tab label="读过"><app-readed></app-readed></mat-tab>
+
+    </mat-tab-group>
+
+  </div>
+
+</div>
+
+

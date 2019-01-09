@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
+import {TagService} from '../../../service/tag.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
     {imgurl: 'https://img1.doubanio.com/view/subject/m/public/s29960267.jpg', bookName: '一定有人在祈祷着', author: '[日]山田宗树'},
   ];
   //最受关注的书籍信息
-  focusOnBookInfoes = [
+  focusOnBookInfoes : any = [
     {imgUrl: 'https://img3.doubanio.com/view/subject/m/public/s29930566.jpg', bookName: '4321', rate: 8.8, author: '[美] 保罗·奥斯特', type: '小说 / 美国文学'},
     {imgUrl: 'https://img3.doubanio.com/view/subject/m/public/s29930566.jpg', bookName: '4321', rate: 8.8, author: '[美] 保罗·奥斯特', type: '小说 / 美国文学'},
     {imgUrl: 'https://img3.doubanio.com/view/subject/m/public/s29930566.jpg', bookName: '4321', rate: 8.8, author: '[美] 保罗·奥斯特', type: '小说 / 美国文学'},
@@ -56,7 +57,7 @@ export class HomeComponent implements OnInit {
   currentRate: number = 3.75;
 
 
-  constructor(config: NgbRatingConfig) {
+  constructor(config: NgbRatingConfig, private tagService: TagService) {
     config.max = 5;
     config.readonly = true;
   }

@@ -1,0 +1,64 @@
+.note-top {
+  width: 100%;
+  background: #f3f3f3;
+  height: 56px;
+  align-items: center;
+}
+.article-bar-input-box {
+  width: 100%;
+}
+.article-bar-input-box input {
+  border: none;
+  outline: none;
+  padding-left: 1rem;
+  font-size: 1.1rem;
+  background-color: transparent;
+  display: block;
+  font-variant-ligatures: no-common-ligatures;
+  width: 100%;
+  height: 36px;
+  color: inherit;
+
+}
+
+.name-avatar img {
+  height: 36px;
+  width: 36px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.note-top-right {
+  padding-right: 1rem;
+}
+
+.note-top-right button {
+  margin-right: 2rem;
+}
+
+button {
+  outline: none;
+}
+
+.book-box .review-editor-subject-card-cover img {
+  width: 61px;
+
+}
+
+.book-box .book-info-right {
+  background: #f8f8f8;
+  width: 100%;
+}
+
+.form-book-info {
+  padding: .5rem 1rem;
+}
+
+.form-book-info .form-control {
+  display: inline-flex;
+  width: 50%;
+  text-align: center;
+}
+

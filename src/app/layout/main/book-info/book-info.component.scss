@@ -1,0 +1,123 @@
+button {
+  outline: none;
+}
+
+ngb-rating {
+  outline: none;
+}
+
+.book-info-box {
+  padding: 1rem;
+}
+
+.book-info-box .book-name {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.book-info-box .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-info-box .book-info-img-box {
+  width: 12.5%;
+}
+
+.book-info-box .book-info {
+  padding: 0 0 0 1rem;
+}
+
+.book-info-box .book-info p {
+  margin-bottom: .4rem;
+  font-size: .9rem;
+  color: #666666;
+}
+
+.book-info-box .book-info p span {
+  color: #000;
+}
+
+.book-info p a:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.interest_sect_level {
+  margin-top: 1.5rem;
+}
+.interest_sect_level button {
+  line-height: 1rem;
+  background: #ffeada;
+  font-size: .9rem;
+  padding: .2rem;
+  margin-right: .5rem;
+}
+
+.interest_sect_level ngb-rating {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  color: #ffac2d;
+}
+
+.related_info {
+  padding: 1rem;
+}
+
+.related_info .introduction {
+  color: #007722;
+}
+
+.related_info .introduction-container {
+  font-size: .9rem;
+}
+
+.introduction-container p{
+  margin-bottom: .5rem;
+}
+
+.text-indent {
+  text-indent: 2rem;
+
+}
+
+.showmore {
+  cursor: pointer;
+  color: #007722;
+  
+}
+
+.showmore:hover {
+  color: #ff0000;
+}
+
+.my-collection .collection-info {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: .9rem;
+}
+
+.my-collection .collection-info > div {
+  margin-right: .5rem;
+}
+
+.my-collection .collection-info > span {
+  margin-right: .5rem;
+}
+
+.my-collection .collection-command {
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+
+.collection-command ngb-rating {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  color: #ffac2d;
+}
+
+.my-collection .short_note {
+  font-size: .9rem;
+}

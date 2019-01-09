@@ -1,0 +1,41 @@
+button {
+  outline: none;
+}
+
+.collection-title {
+  margin: -24px -24px 0 -24px;
+  padding: 1rem;
+  background: #ebf5ea;
+  color: #007722;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.command-form {
+  margin-top: .5rem;
+}
+
+.tags-switch {
+  margin-top: .5rem;
+  display: flex;
+  //justify-content: center;
+  //justify-content: center;
+  align-items: flex-start;
+  height: 2.5rem;
+}
+
+ngb-rating {
+  outline: none;
+}
+
+.tags-switch mat-radio-button {
+  margin-right: .5rem;
+}
+
+.tags-switch ngb-rating {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+

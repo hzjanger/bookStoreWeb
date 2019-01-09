@@ -1,0 +1,40 @@
+<div class="ebooks-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <h2 class="classification">分类</h2>
+        <mat-nav-list>
+          <mat-list-item *ngFor="let menu of menus">
+            <a href="/ebooks">{{menu}}</a>
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+      <div class="col-10">
+        <div class="carousel-img-box">
+          <ngb-carousel *ngIf="images" class="carousel-item active">
+            <ng-template ngbSlide *ngFor="let img of images">
+              <img [src]="img" alt="Random first slide">
+            </ng-template>
+          </ngb-carousel>
+        </div>
+        <div class="content">
+          <div class="sell-book-box">
+            <h3>编辑推荐</h3>
+            <div class="sell-book-info">
+              <div class="sell-book" *ngFor="let chiefEditorRecommend of chiefEditorRecommendes">
+                <img src="{{chiefEditorRecommend.imgUrl}}" referrerpolicy="never">
+                <h4 class="sell-book-name"><a href="#" matTooltip="{{chiefEditorRecommend.bookName}}">{{chiefEditorRecommend.bookName}}</a></h4>
+                <p class="sell-book-author" matTooltip="{{chiefEditorRecommend.author}}">{{chiefEditorRecommend.author}}</p>
+                <h4 class="sell-book-price" matTooltip="{{chiefEditorRecommend.prices}}">{{chiefEditorRecommend.prices}}元</h4>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

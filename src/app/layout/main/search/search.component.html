@@ -1,21 +1,19 @@
 <div class="container">
-  <h2 class="search-value">搜索 Java</h2>
-  <h5 class="search-amount">为您找到999本书籍</h5>
-  <div class="row book-list">
+  <h2 class="search-value">搜索 {{searchValue}}</h2>
+  <h5 class="search-amount">为您找到{{bookInfo.length}}本书籍</h5>
+  <div class="row book-list" *ngFor="let book of bookInfo">
     <div class="col-1">
-      <img class="img-fluid" src="https://img3.doubanio.com/view/subject/l/public/s27243455.jpg" referrerpolicy ="never">
+      <img class="img-fluid" src="{{book.book_img}}" referrerpolicy ="never">
     </div>
     <div class="col-11">
-      <p><a href="https://book.douban.com/subject/2130190/">Java编程思想 （第4版）</a></p>
+      <p><a [routerLink]="['/bookinfo', book.isbn]">{{book.book_name}}</a></p>
       <p>
-        <ngb-rating [rate]="9.9/2"></ngb-rating>
-        <span>9.9</span>
+        <ngb-rating [rate]="book.grade/2"></ngb-rating>
+        <span>{{book.grade}}</span>
       </p>
       <p class="author">
-        [美] Bruce Eckel / 陈昊鹏 / 机械工业出版社 / 2007-6 / 108.00元
+        {{book.book_author}} / {{book.book_translator}} / {{book.book_press}} / {{book.publisher_time}} / {{book.book_prices}}元
       </p>
-
-
     </div>
   </div>
 

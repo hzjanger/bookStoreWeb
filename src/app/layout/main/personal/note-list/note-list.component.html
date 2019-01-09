@@ -1,0 +1,11 @@
+<div class="article-list-item" *ngFor="let bookNote of bookNotes">
+  <h5 class="article-list-item-title">{{bookNote.note_title}}</h5>
+  <div class="article-list-item-info">
+    <span>{{bookNote.createTime | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+    <div>
+      <span (click)="showNote(bookNote)">查看</span>
+      <span (click)="editorNote(bookNote)">编辑</span>
+      <span (click)="deleteNote(bookNote)">删除</span>
+    </div>
+  </div>
+</div>

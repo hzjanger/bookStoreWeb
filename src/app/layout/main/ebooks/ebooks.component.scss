@@ -1,0 +1,97 @@
+.ebooks-background {
+  padding-top: 1rem;
+  background: #f8f9f9;
+}
+
+.classification {
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  font-weight: 600;
+  padding: 0 1rem .5rem 1rem;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+mat-nav-list {
+  padding-top: 0;
+}
+
+mat-nav-list mat-list-item {
+  border-bottom: 1px solid #eee;
+
+}
+
+.carousel-img-box img {
+  width: 100%;
+}
+
+.carousel-item.active {
+
+}
+
+.carousel-img-box .carousel-item.active {
+  -webkit-transition: transform 1s ease,-webkit-transform 1s ease;
+  -moz-transition: transform 1s ease,-webkit-transform 1s ease;
+  -ms-transition: transform 1s ease,-webkit-transform 1s ease;
+  -o-transition: transform 1s ease,-webkit-transform 1s ease;
+  transition: transform 1s ease,-webkit-transform 1s ease;
+}
+
+.sell-book-box h3 {
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  padding-bottom: .5rem;
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.sell-book-info {
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.sell-book {
+  width: 16%;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #f2f2eb;
+}
+
+.sell-book img {
+  width: 100%;
+}
+
+.sell-book h4, .sell-book p {
+  margin-bottom: .5rem;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sell-book .sell-book-name {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.sell-book .sell-book-name a {
+  color: #000;
+}
+
+.sell-book .sell-book-name a:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.sell-book .sell-book-author {
+  font-size: .8rem;
+  color: rgb(119, 119, 119);
+}
+
+.sell-book .sell-book-price {
+  color: rgb(97, 179, 155);
+  font-size: 1rem;
+}
+

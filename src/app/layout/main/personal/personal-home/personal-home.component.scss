@@ -1,0 +1,80 @@
+.my-course-header {
+  background: url("../../../../../assets/img/person-background.png") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+
+
+.my-course-avatar {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  max-height: 150px;
+  max-width: 150px;
+
+}
+
+.my-course-header-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.personal-info {
+  color: #ffffff;
+  padding-left: 2rem;
+}
+
+.personal-info>p:nth-child(3){
+  opacity: .5;
+}
+
+.my-course-header-right {
+  color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.my-course-header-right div {
+  opacity: 0.8;
+  border: 1px solid rgba(255,255,255,.4);
+  padding: .4rem 1rem;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+}
+
+.my-course-header-right div:hover {
+  color: #fff;
+  opacity: 1;
+  border-color: #ffffff;
+}
+
+.course-menu-box {
+  padding: 0;
+  border-right: 1px solid #EAEEF1;
+}
+
+.course-menu-box mat-nav-list mat-list-item mat-icon {
+  display: inline-flex;
+  color: #93999f;
+}
+
+.menu {
+  position: relative;
+}
+
+.note {
+  position: absolute;
+  right: 30px;
+  top:5px;
+  z-index: 2;
+}
+button {
+  outline: none;
+}

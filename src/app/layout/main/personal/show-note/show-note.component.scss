@@ -1,0 +1,21 @@
+.article-header {
+  flex-direction: column;
+  padding: 1.5rem 1.25rem 1rem 1.25rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.article-header .title-article {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.article-info-box {
+  font-size: .9rem;
+  color: #858585;
+}
+
+.article-info-box .article-info-left span {
+  margin-right: 2rem;
+}
+
+

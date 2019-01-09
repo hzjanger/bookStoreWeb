@@ -1,0 +1,37 @@
+<h4 class="collection-title" mat-dialog-title>
+  <span *ngIf="bookCollectionInfo.book_status_type === '想读'">添加收藏：我想读这本书</span>
+  <span *ngIf="bookCollectionInfo.book_status_type === '在读'">添加收藏：我最近在读这本书</span>
+  <span *ngIf="bookCollectionInfo.book_status_type === '读过'">添加收藏：我读过这本书</span>
+
+  <button mat-icon-button (click)="closeDialog()">
+    <mat-icon svgIcon="close"></mat-icon>
+  </button>
+</h4>
+<mat-dialog-content>
+  <div class="tags-switch">
+    <mat-radio-group>
+      <!--data.collectionType: 从-->
+      <mat-radio-button value="想读" [checked]="bookCollectionInfo.book_status_type === '想读'" (change)="changeChoice($event)">想读</mat-radio-button>
+      <mat-radio-button value="在读" [checked]="bookCollectionInfo.book_status_type === '在读'" (change)="changeChoice($event)">在读</mat-radio-button>
+      <mat-radio-button value="读过" [checked]="bookCollectionInfo.book_status_type === '读过'" (change)="changeChoice($event)">读过</mat-radio-button>
+    </mat-radio-group>
+    <!--想读的时， 不能评价书籍-->
+    <div *ngIf="bookCollectionInfo.book_status_type != '想读'">
+      评价<ngb-rating [(rate)]="bookCollectionInfo.command_gradue"
+                    (hover)="hoverRate($event)"
+                    (leave)="resetCurrentRate()" [max]="5" [readonly]="false"></ngb-rating>
+      <span>{{rateValue}}</span>
+    </div>
+
+  </div>
+  <form>
+    <div class="form-group command-form">
+      <label for="command">简短附注:</label>
+      <textarea class="form-control" id="command" rows="3" [formControl]="command"></textarea>
+    </div>
+  </form>
+
+</mat-dialog-content>
+<div mat-dialog-actions class="d-flex justify-content-end">
+  <button mat-raised-button (click)="saveCollection()">保存</button>
+</div>

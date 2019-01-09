@@ -1,0 +1,17 @@
+mat-toolbar {
+  background: #ffffff;
+  justify-content: space-between;
+}
+
+button, mat-icon {
+  outline: none;
+}
+
+.name-avatar img {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  cursor: pointer;
+}

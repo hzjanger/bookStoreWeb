@@ -1,23 +1,97 @@
-.container-fluid{
-  background: url("../../../../assets/img/ban.jpg") no-repeat;
-  -webkit-background-size: cover;
-  background-size: cover;
+button {
+  outline: none;
 }
-h1{
-  font-size: 3.5em;
-  color: #fff;
+
+.login-box {
+  width: 45%;
+}
+
+.login-img-box {
+  padding-top: 1.875rem;
+}
+
+.login-tille {
+  color: #494949;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.login-behaver {
+  text-align: right;
+
+}
+
+.login-behaver a {
+  font-size: .9rem;
+}
+
+.login-behaver a:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.login-form-group {
+  display: flex;
+  align-items: flex-end;
+}
+
+.login-form-group span {
+  display: inline-flex;
+  width: 15%;
   text-align: center;
-  margin: 1.5em 0em 1em 0em;
-  font-family: 'Raleway', sans-serif;
-  letter-spacing: 3px;
+  align-items: flex-end;
+  padding-bottom: 1.5em;
 }
 
-.login-box{
-  background-color: rgba(255, 255, 255, 0.45);
-  padding: 2.5rem 3rem 2rem 3rem;
+.login-form-group .login-form-control {
+  width: 85%;
+}
+
+.verification-code .login-form-control {
+  width: 58%;
+}
+
+.verification-code button {
+  margin-bottom: 1.5rem;
+  margin-left: 1%;
+}
+
+.remeber {
+  display: flex;
+  align-content: center;
+}
+
+.remeber span {
+  margin-bottom: .5rem;
+  margin-left: .5rem;
+}
+
+.remeber span a {
+  margin-left: .5rem;
+}
+
+.remeber span a:hover {
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+}
+
+.submit-btn button {
+  margin-right: 1rem;
 }
 
 
-.active {
-  display: block;
+
+@media (min-width: 1200px) {
+  .my-comtainer {
+    max-width: 950px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 }

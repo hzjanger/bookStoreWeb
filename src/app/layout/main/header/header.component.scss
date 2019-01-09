@@ -1,6 +1,5 @@
 .nav-background {
   background: #f6f6f1;
-  padding-top: 1rem;
   border-bottom: 1px solid #e5ebe4;
 }
 
@@ -14,13 +13,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
+  //padding-bottom: 1rem;
 }
 
 .logo-box .navbar-brand {
   color: #614e3c;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.nav-form {
+  margin-bottom: 0;
 }
 
 .nav-form .nav-search {
@@ -41,6 +44,9 @@
   border-bottom-right-radius: .25rem;
 }
 
+.search-btn mat-icon {
+  display: flex;
+}
 .menu {
   justify-content: flex-end;
 }
@@ -52,4 +58,22 @@
 .menu a:hover {
   color: #ff0000;
   text-decoration: none;
+}
+
+.name-avatar img {
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+button {
+  outline: none;
+}
+
+
+mat-toolbar {
+  font-size: 1rem;
 }
