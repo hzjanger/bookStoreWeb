@@ -6,9 +6,9 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="bookUrl">豆瓣书籍地址</span>
           </div>
-          <input [formControl]="crawlingUrl" type="text" class="form-control" id="url" aria-describedby="bookUrl">
+          <input type="text" class="form-control" id="url" aria-describedby="bookUrl">
           <div class="input-group-prepend">
-            <button mat-raised-button class="auto-btn" (click)="crawlingOneBook()">自动填充</button>
+            <button mat-raised-button class="auto-btn">自动填充</button>
           </div>
         </div>
       </form>

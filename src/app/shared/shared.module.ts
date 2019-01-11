@@ -5,22 +5,23 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {
   MatButtonModule,
-  MatCheckboxModule,
+  MatCheckboxModule, MatDatepickerModule,
   MatDialogModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatMenuModule,
+  MatMenuModule, MatNativeDateModule, MatPaginatorModule,
   MatRadioModule,
   MatSidenavModule,
-  MatSnackBarModule, MatTabsModule,
+  MatSnackBarModule, MatTableModule, MatTabsModule,
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
 import {HttpClientModule} from '@angular/common/http';
 import {EditorMdDirective} from '../editor/editor-md.directive';
+import {FileUploadModule} from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {EditorMdDirective} from '../editor/editor-md.directive';
     ReactiveFormsModule,
     NgbModule,
     HttpClientModule,
+    FileUploadModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
@@ -46,7 +48,11 @@ import {EditorMdDirective} from '../editor/editor-md.directive';
     MatDialogModule,
     MatRadioModule,
     MatSnackBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   exports: [
     FormsModule,
@@ -54,6 +60,7 @@ import {EditorMdDirective} from '../editor/editor-md.directive';
     NgbModule,
     HttpClientModule,
     EditorMdDirective,
+    FileUploadModule,
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
@@ -68,7 +75,11 @@ import {EditorMdDirective} from '../editor/editor-md.directive';
     MatDialogModule,
     MatRadioModule,
     MatSnackBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule
   ]
 })
 export class SharedModule { }

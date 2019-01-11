@@ -16,11 +16,14 @@
 }
 
 .new-book-img-box img {
-  width: 100%;
+  //width: 100%;
+  width: 120px;
+  height: 170px;
 }
 
 .new-book-img-box p {
   margin-bottom: 0;
+  margin-top: .5rem;
   font-size: .9rem;
   overflow: hidden;
   -ms-text-overflow: ellipsis;
@@ -42,11 +45,14 @@
 }
 
 .focus-on-img-box img {
-  width: 100%;
+  //width: 100%;
+  width: 80px;
+  height: 112px;
 }
 
 .focus-on-books-info {
   padding-left: 1.5rem;
+  width: 75%;
 }
 
 .focus-on-books-info p {
@@ -188,6 +194,13 @@ ngb-rating {
   color: #efefef;
   display: block;
   padding: 0.5rem 0rem;
+}
+
+.overflow-ellipsis {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media (min-width: 992px) {

@@ -14,8 +14,9 @@
             <p>作者: <a [routerLink]="['/search']" [queryParams]="{author: bookInfo.book_author}" class="author">{{bookInfo.book_author}}</a></p>
             <p>出版社: <span>{{bookInfo.book_press}}</span></p>
             <p *ngIf="bookInfo.book_translator != ''">译者: <a href="#">{{bookInfo.book_translator}}</a></p>
-            <p>出版年: <span>{{bookInfo.publisher_time}}</span></p>
+            <p>出版年: <span>{{bookInfo.publisher_time | date: 'yyyy-MM-dd'}}</span></p>
             <p>页数: <span>{{bookInfo.book_page}}</span></p>
+            <p>定价: <span>{{bookInfo.book_prices}}</span></p>
             <p>装帧: <span>{{bookInfo.book_binding}}</span></p>
             <p>ISBN: <span>{{bookInfo.isbn}}</span></p>
           </div>

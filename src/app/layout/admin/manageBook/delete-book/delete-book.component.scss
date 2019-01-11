@@ -1,0 +1,66 @@
+.book-list {
+  padding-top: .5rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid #eff1f0;
+}
+
+.book-list .my-col-1-8 {
+  flex: 0 0 14%;
+  max-width: 14%;
+}
+
+.book-list .my-col-10-2 {
+  flex: 0 0 86%;
+  max-width: 86%;
+}
+
+.search-amount {
+  font-size: 1rem;
+  color: #ccc;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #EAEEF1;
+}
+
+.reviews {
+  color: #9F7474;
+  margin-left: .5rem;
+}
+
+.author {
+  color: #999999;
+  font-size: .9rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.book-list .col-11 p {
+  margin-bottom: .6rem;
+}
+
+ngb-rating {
+  outline: none;
+  margin-right: .5rem;
+}
+
+.book-list-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 1rem 0;
+}
+
+.book-list-right p {
+  margin-bottom: 0;
+}
+
+.delete-search-form {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: .5rem;
+}
+.delete-search-form mat-form-field {
+  width: 40%;
+  margin-right: 1rem;
+}

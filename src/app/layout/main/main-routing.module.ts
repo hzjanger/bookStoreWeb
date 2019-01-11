@@ -19,7 +19,7 @@ const mainRoutes: Routes = [
   {path: '', component: MainComponent, children: [
       { path: '', component: HomeComponent},
       { path: 'search', component: SearchComponent},
-      { path: 'bookinfo/:id', component: BookInfoComponent},
+      { path: 'bookinfo', component: BookInfoComponent},
       { path: 'ebooks', component: EbooksComponent},
       { path: 'personal', component: PersonalHomeComponent, children: [
           { path: 'notelist', component: NoteListComponent},

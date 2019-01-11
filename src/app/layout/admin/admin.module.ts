@@ -10,6 +10,9 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminFooterComponent } from './admin-footer/admin-footer.component';
 import { AddBookComponent } from './manageBook/add-book/add-book.component';
+import { DeleteBookComponent } from './manageBook/delete-book/delete-book.component';
+import { ManageListComponent } from './manageBook/manage-list/manage-list.component';
+import { UpdateBookComponent } from './manageBook/update-book/update-book.component';
 
 @NgModule({
   imports: [
@@ -23,7 +26,10 @@ import { AddBookComponent } from './manageBook/add-book/add-book.component';
     SidemenuComponent,
     AdminHeaderComponent,
     AdminFooterComponent,
-    AddBookComponent
+    AddBookComponent,
+    DeleteBookComponent,
+    ManageListComponent,
+    UpdateBookComponent
   ]
 })
 export class AdminModule { }

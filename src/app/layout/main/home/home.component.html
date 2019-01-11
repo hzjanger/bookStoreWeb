@@ -5,35 +5,40 @@
       <div class="col-sm-12 col-md-12 my-col-lg-7-4">
         <!--新书速递-->
         <h2 class="head-title">
-          <span class="new-book">新书速递</span>
+          <span class="new-book">小编推荐</span>
         </h2>
         <div class="row">
           <div class="col-4 col-sm-3" *ngFor="let newBookInfo of newBookInfoes">
             <div class="new-book-img-box">
-              <img src="{{newBookInfo.imgurl}}" referrerpolicy="never">
-              <p><a routerLink="search" matTooltip="{{newBookInfo.bookName}}">{{newBookInfo.bookName}}</a></p>
-              <p matTooltip="{{newBookInfo.author}}">{{newBookInfo.author}}</p>
+              <a [routerLink]="['/bookinfo']" [queryParams]="{isbn: newBookInfo.isbn}">
+                <img [src]="newBookInfo.book_img" referrerpolicy="no-referrer">
+              </a>
+              <p><a [routerLink]="['/bookinfo']" [queryParams]="{isbn: newBookInfo.isbn}" matTooltip="{{newBookInfo.book_name}}">{{newBookInfo.book_name}}</a></p>
+              <p matTooltip="{{newBookInfo.book_author}}">{{newBookInfo.book_author}}</p>
             </div>
           </div>
         </div>
         <!--最受关注图书榜-->
         <h2 class="head-title">
-          <span class="new-book">最受关注图书榜</span>
+          <span class="new-book">图书排行榜</span>
         </h2>
         <div class="row">
           <div class="col-6" *ngFor="let focusOnBookInfo of focusOnBookInfoes">
             <div class="focus-on">
               <div class="focus-on-img-box">
-                <img src="{{focusOnBookInfo.imgUrl}}" referrerpolicy="never">
+                <a [routerLink]="['/bookinfo']" [queryParams]="{isbn: focusOnBookInfo.isbn}">
+                  <img [src]="focusOnBookInfo.book_img" referrerpolicy="no-referrer">
+
+                </a>
               </div>
               <div class="focus-on-books-info">
-                <p class="book-name">{{focusOnBookInfo.bookName}}</p>
+                <a class="book-name" [routerLink]="['/bookinfo']" [queryParams]="{isbn: focusOnBookInfo.isbn}">{{focusOnBookInfo.book_name}}</a>
                 <p class="rate">
-                  <ngb-rating [rate]="focusOnBookInfo.rate"></ngb-rating>
-                  <span>{{focusOnBookInfo.rate}}</span>
+                  <ngb-rating [rate]="focusOnBookInfo.grade/2"></ngb-rating>
+                  <span>{{focusOnBookInfo.grade}}</span>
                 </p>
-                <p>作者：{{focusOnBookInfo.author}}</p>
-                <p>{{focusOnBookInfo.type}}</p>
+                <p class="overflow-ellipsis" [matTooltip]="focusOnBookInfo.book_author">作者：{{focusOnBookInfo.book_author}}</p>
+                <!--<p>{{focusOnBookInfo.type}}</p>-->
               </div>
             </div>
           </div>
@@ -83,78 +88,19 @@
           <span class="new-book">豆瓣图书250</span>
         </h2>
         <div class="row">
-          <div class="col-4">
+          <div class="col-4" *ngFor="let book of moreMoneyBook">
             <div class="card card-overrite">
               <a href="https://book.douban.com/subject/4913064/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s2875823.jpg" referrerpolicy="never" class="img-fluid">
+                <img [src]="book.book_img" referrerpolicy="no-referrer" class="img-fluid">
               </a>
               <div class="row" style="margin-top: 1rem;">
                 <div class="col-12">
-                  <a href="https://book.douban.com/subject/1449352/?icn=index-book250-subject">朝花夕拾</a>
+                  <a [routerLink]="['/bookinfo']" [queryParams]="{isbn: book.isbn}">{{book.book_name}}</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/4913064/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s2875823.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="https://book.douban.com/subject/1449352/?icn=index-book250-subject">朝花夕拾</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/4913064/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s2875823.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="https://book.douban.com/subject/1449352/?icn=index-book250-subject">朝花夕拾</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/4913064/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s2875823.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="https://book.douban.com/subject/1449352/?icn=index-book250-subject">朝花夕拾</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/4913064/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s2875823.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="https://book.douban.com/subject/1449352/?icn=index-book250-subject">朝花夕拾</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card card-overrite">
-              <a href="https://book.douban.com/subject/4913064/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s2875823.jpg" referrerpolicy="never" class="img-fluid">
-              </a>
-              <div class="row" style="margin-top: 1rem;">
-                <div class="col-12">
-                  <a href="https://book.douban.com/subject/1449352/?icn=index-book250-subject">朝花夕拾</a>
-                </div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
     </div>

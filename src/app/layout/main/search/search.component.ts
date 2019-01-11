@@ -14,7 +14,9 @@ export class SearchComponent implements OnInit {
   bookName: string = '';
   author: string = '';
   bookInfo: Book[] = [];
-  constructor(config: NgbRatingConfig, private activateRoute: ActivatedRoute, private bookService: BookService) {
+  constructor(config: NgbRatingConfig,
+              private activateRoute: ActivatedRoute,
+              private bookService: BookService) {
     config.max = 5;
     config.readonly = true;
 
@@ -25,6 +27,7 @@ export class SearchComponent implements OnInit {
       .subscribe((params: Params) => {
         this.bookName = params['searchValue'];
         this.author = params['author'];
+        console.log('进入了');
         if (this.bookName != undefined) {
           this.searchBook();
         }

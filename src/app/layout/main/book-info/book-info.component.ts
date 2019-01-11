@@ -53,9 +53,9 @@ export class BookInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.paramMap
+    this.route.queryParams
       .subscribe(params => {
-        this.isbn = params.get('id');
+        this.isbn = params['isbn'];
         //查找书籍信息
         this.findOneBook();
         //查找用户是否收藏了这本书籍

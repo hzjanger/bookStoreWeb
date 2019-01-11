@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <form class="delete-search-form">
+    <mat-form-field>
+      <input matInput placeholder="从当前数据中检索">
+    </mat-form-field>
+  </form>
+
+</div>
+<div class="container-fluid" *ngIf="bookInfo">
+  <div class="row book-list" *ngFor="let book of bookInfo; let i = index">
+    <div class="col-2 my-col-1-8">
+      <img class="img-fluid" src="{{book.book_img}}" referrerpolicy ="never">
+    </div>
+    <div class="col-10 my-col-10-2">
+      <div class="book-list-right">
+        <p><a [routerLink]="['/bookinfo', book.isbn]">{{book.book_name}}</a></p>
+        <p>
+          <ngb-rating [rate]="book.grade" [max]="5" [readonly]="true"></ngb-rating>
+          <span>{{book.grade}}</span>
+        </p>
+
+        <div class="book-list-bottom d-flex justify-content-between align-content-center">
+          <p class="author">
+            {{book.book_author}} / {{book.book_translator}} / {{book.book_press}} / {{book.publisher_time}} / {{book.book_prices}}元
+          </p>
+          <div>
+            <button mat-raised-button (click)="deleteBook(book)">删除</button>
+            <button mat-raised-button (click)="writeNote(i)">修改</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

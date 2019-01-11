@@ -37,6 +37,7 @@ export class HeaderComponent implements OnInit {
    * 搜索
    */
   searchBook() {
+    console.log('anxiale');
     this.router.navigate(['/search'], {
       queryParams: {
         searchValue: this.search.value
