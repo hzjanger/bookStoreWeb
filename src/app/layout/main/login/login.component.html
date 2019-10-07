@@ -6,29 +6,22 @@
       </a>
     </div>
     <h1 class="login-tille">登录豆瓣</h1>
-    <form [formGroup]="login" (ngSubmit)="onSubmit()">
-      <div class="login-behaver">
-        <a href="#">邮箱验证码登录</a>
-      </div>
-      <div class="login-form-group">
-        <span>账号</span>
-        <mat-form-field class="login-form-control">
-          <input matInput type="text" placeholder="邮箱" formControlName="userAccount">
-        </mat-form-field>
-      </div>
-      <div class="login-form-group">
-        <span>密码</span>
-        <mat-form-field class="login-form-control">
-          <input matInput type="password" placeholder="密码" formControlName="password">
-        </mat-form-field>
-      </div>
-      <div class="remeber">
+    <form [formGroup]="loginGroup" (ngSubmit)="onSubmit()" class="login-form">
+      <mat-form-field class="login-form-control">
+        <input matInput type="text" placeholder="邮箱账号" formControlName="account">
+        <mat-error *ngIf="account.invalid">{{getAccountError()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="login-form-control">
+        <input matInput type="password" placeholder="密码" formControlName="password">
+        <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
+      </mat-form-field>
+      <div class="remember">
         <mat-checkbox>7天内自动登录</mat-checkbox>
         <span>|<a href="#">忘记密码</a></span>
       </div>
       <div class="submit-btn">
-        <button mat-raised-button type="submit">登录</button>
-        <button mat-raised-button routerLink="/register">立即注册</button>
+        <button mat-button type="submit">登录</button>
+        <button mat-button type="button" routerLink="/register">立即注册</button>
       </div>
     </form>
   </div>

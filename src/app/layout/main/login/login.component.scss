@@ -18,51 +18,47 @@ button {
   padding-bottom: 1rem;
 }
 
-.login-behaver {
-  text-align: right;
 
+//.login-form-group {
+//  display: flex;
+//  align-items: flex-end;
+//}
+//
+//.login-form-group span {
+//  display: inline-flex;
+//  width: 12%;
+//  align-items: flex-end;
+//  padding-bottom: 1.5em;
+//}
+
+//.login-form-group .login-form-control {
+//  width: 100%;
+//}
+
+
+.login-form{
+
+  mat-form-field {
+    width: 100%;
+  }
 }
 
-.login-behaver a {
-  font-size: .9rem;
-}
-
-.login-behaver a:hover {
-  text-decoration: none;
-  color: #ff0000;
-}
-
-.login-form-group {
-  display: flex;
-  align-items: flex-end;
-}
-
-.login-form-group span {
-  display: inline-flex;
-  width: 12%;
-  align-items: flex-end;
-  padding-bottom: 1.5em;
-}
-
-.login-form-group .login-form-control {
-  width: 100%;
-}
-
-.remeber {
+//记住
+.remember {
   display: flex;
   align-content: center;
 }
 
-.remeber span {
+.remember span {
   margin-bottom: .5rem;
   margin-left: .5rem;
 }
 
-.remeber span a {
+.remember span a {
   margin-left: .5rem;
 }
 
-.remeber span a:hover {
+.remember span a:hover {
   text-decoration: none;
   color: #ff0000;
 }
