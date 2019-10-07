@@ -2,15 +2,15 @@ button {
   outline: none;
 }
 
-.login-box {
+.register-box {
   width: 45%;
 }
 
-.login-img-box {
+.register-img-box {
   padding-top: 1.875rem;
 }
 
-.login-tille {
+.register-tille {
   color: #494949;
   font-weight: 600;
   font-size: 1.5rem;
@@ -18,73 +18,12 @@ button {
   padding-bottom: 1rem;
 }
 
-.login-behaver {
-  text-align: right;
+.register-form {
+  mat-form-field {
+    width: 100%;
 
+  }
 }
-
-.login-behaver a {
-  font-size: .9rem;
-}
-
-.login-behaver a:hover {
-  text-decoration: none;
-  color: #ff0000;
-}
-
-.login-form-group {
-  display: flex;
-  align-items: flex-end;
-}
-
-.login-form-group span {
-  display: inline-flex;
-  width: 15%;
-  text-align: center;
-  align-items: flex-end;
-  padding-bottom: 1.5em;
-}
-
-.login-form-group .login-form-control {
-  width: 85%;
-}
-
-.verification-code .login-form-control {
-  width: 58%;
-}
-
-.verification-code button {
-  margin-bottom: 1.5rem;
-  margin-left: 1%;
-}
-
-.remeber {
-  display: flex;
-  align-content: center;
-}
-
-.remeber span {
-  margin-bottom: .5rem;
-  margin-left: .5rem;
-}
-
-.remeber span a {
-  margin-left: .5rem;
-}
-
-.remeber span a:hover {
-  text-decoration: none;
-  color: #ff0000;
-}
-
-.submit-btn {
-  margin-top: 1rem;
-}
-
-.submit-btn button {
-  margin-right: 1rem;
-}
-
 
 
 @media (min-width: 1200px) {

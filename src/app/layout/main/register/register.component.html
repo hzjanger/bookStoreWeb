@@ -1,40 +1,32 @@
 <div class="container my-comtainer">
-  <div class="login-box">
-    <div class="login-img-box">
+  <div class="register-box">
+    <div class="register-img-box">
       <a routerLink="/">
         <img src="assets/img/login_logo.png">
       </a>
     </div>
-    <h1 class="login-tille">欢迎加入豆瓣</h1>
-    <form [formGroup]="register" (ngSubmit)="onSubmit()">
-      <div class="login-form-group">
-        <span>账号</span>
-        <mat-form-field class="login-form-control">
-          <input matInput type="text" placeholder="邮箱" formControlName="userAccount">
-        </mat-form-field>
-      </div>
-      <div class="login-form-group">
-        <span>密码</span>
-        <mat-form-field class="login-form-control">
-          <input matInput type="password" placeholder="密码" formControlName="password">
-        </mat-form-field>
-      </div>
-      <div class="login-form-group">
-        <span>昵称</span>
-        <mat-form-field class="login-form-control">
-          <input matInput type="text" placeholder="昵称" formControlName="userName">
-        </mat-form-field>
-      </div>
-      <div class="login-form-group verification-code">
-        <span>验证码</span>
-        <mat-form-field class="login-form-control">
-          <input matInput type="password" placeholder="验证码" formControlName="verificationCode">
-        </mat-form-field>
-        <button mat-raised-button>获取验证码</button>
-      </div>
-      <div class="submit-btn">
-        <button mat-raised-button type="submit">注册</button>
-        <button mat-raised-button routerLink="/login">返回登录</button>
+    <h1 class="register-tille">欢迎加入豆瓣</h1>
+    <form [formGroup]="registerGroup" (ngSubmit)="onSubmit()" class="register-form">
+      <mat-form-field class="login-form-control">
+        <input matInput type="text" placeholder="请输入昵称" formControlName="nickName">
+        <mat-error *ngIf="nickName.invalid">{{getNickNameError()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="login-form-control">
+        <input matInput type="text" placeholder="请输入邮箱" formControlName="email">
+        <mat-error *ngIf="email.invalid">{{getEmailError()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="login-form-control">
+        <input matInput type="password" placeholder="请输入密码" formControlName="password">
+        <mat-error *ngIf="password.invalid">{{getPasswordError()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field class="login-form-control">
+        <input matInput type="password" placeholder="请输入验证码" formControlName="code">
+        <button matSuffix mat-button>获取验证码</button>
+        <mat-error *ngIf="code.invalid">{{getCodeError()}}</mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button type="submit" class="mr-3">注册</button>
+        <button mat-button type="button" routerLink="/login">返回登录</button>
       </div>
     </form>
   </div>

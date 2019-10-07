@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../../entity/user';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../../service/user.service';
 import {Router} from '@angular/router';
+import {ImgUrl} from "../../../entity/const/consts";
+import {Result} from "../../../entity/comment/Result";
+import {ResultCode} from "../../../entity/comment/ResultCode";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-register',
@@ -21,31 +25,88 @@ export class RegisterComponent implements OnInit {
     verificationCode: new FormControl(''),
   });
 
+  registerGroup: FormGroup;
   cc: number = 1;
 
 
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(
+    private userService: UserService,
+    private router: Router,
+    private fb: FormBuilder,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit() {
-    // console.log(this.user.activated)
+    this.registerGroup = this.fb.group({
+      nickName: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      password: [null, Validators.required],
+      code: [null, Validators.required],
+      imgUrl: [ImgUrl]
+    })
   }
 
+  /**
+   * 注册
+   */
   onSubmit() {
-    this.user.user_account = this.register.value.userAccount;
-    this.user.user_password = this.register.value.password;
-    this.user.user_name = this.register.value.userName;
-    console.log(this.user);
-    this.userService.register(this.user)
-      .subscribe(data => {
-        console.log(data);
-        if (data) {
-          this.router.navigate(['/login']);
-        } else {
-          alert('注册失败');
-        }
-      })
+    if (this.registerGroup.valid) {
+      this.userService.register(this.registerGroup.value)
+        .subscribe((data: Result) => {
+          this.snackBar.open(data.message, "关闭", {
+            duration: 1000
+          });
+          if (data.success && data.code === ResultCode.registerSuccess) {
+            this.router.navigate(['/login']);
+          }
+
+        })
+    }
   }
 
+  get nickName(): FormControl {
+    return this.registerGroup.get('nickName') as FormControl;
+  }
 
+  get email(): FormControl {
+    return this.registerGroup.get('email') as FormControl;
+  }
+
+  get password(): FormControl {
+    return this.registerGroup.get('password') as FormControl;
+  }
+
+  get code(): FormControl {
+    return this.registerGroup.get('code') as FormControl;
+  }
+
+  /**
+   * 获取昵称的错误信息
+   */
+  getNickNameError() {
+    return this.nickName.hasError('required') ? '输入不能为空' : '';
+  }
+
+  /**
+   * 获取邮箱的错误信息
+   */
+  getEmailError() {
+    return this.email.hasError('required') ? '输入不能为空' :
+       this.email.hasError('email') ? '邮箱格式错误':'';
+  }
+
+  /**
+   * 获取密码的错误信息
+   */
+  getPasswordError() {
+    return this.password.hasError('required') ? '输入不能为空' : '';
+  }
+
+  /**
+   * 获取验证码的错误信息
+   */
+  getCodeError() {
+    return this.code.hasError('required') ? '输入不能为空' : '';
+  }
 }
