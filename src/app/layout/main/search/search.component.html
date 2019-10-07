@@ -1,12 +1,12 @@
 <div class="container">
-  <h2 class="search-value">搜索 {{searchValue}}</h2>
+  <h2 class="search-value">搜索 </h2>
   <h5 class="search-amount">为您找到{{bookInfo.length}}本书籍</h5>
   <div class="row book-list" *ngFor="let book of bookInfo">
     <div class="col-1">
       <img class="img-fluid" src="{{book.book_img}}" referrerpolicy="no-referrer">
     </div>
     <div class="col-11">
-      <p><a [routerLink]="['/bookinfo', book.isbn]">{{book.book_name}}</a></p>
+      <p><a [routerLink]="['/bookinfo']" [queryParams]="{isbn: book.isbn}">{{book.book_name}}</a></p>
       <p>
         <ngb-rating [rate]="book.grade/2"></ngb-rating>
         <span>{{book.grade}}</span>
