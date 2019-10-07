@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
+import {User} from "../../../entity/user";
+import {LocalStorageInfo} from "../../../utils/LocalStorageInfo";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-header',
@@ -13,24 +16,25 @@ export class HeaderComponent implements OnInit {
 
   search = new FormControl('');
 
-
-
-
-  constructor(private router: Router) { }
+  /**
+   * 用户信息
+   */
+  userInfo: User;
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
-    if (localStorage.getItem('userId')) {
-      this.login = true;
-    }
-
+    //获取存储在localStorage中的用户信息
+    this.userInfo = LocalStorageInfo.userInfo;
   }
 
   /**
    * 注销
    */
-  loginout() {
-    localStorage.removeItem('userId');
-    this.login = false;
+  quitLogin() {
+    this.userService.quitLogin();
   }
 
   /**
