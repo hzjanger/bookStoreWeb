@@ -3,11 +3,15 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {User} from '../entity/user';
 import {Observable, throwError} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
+import {Result} from "../entity/comment/Result";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+
+  private url: string = '/bookshop/user';
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -27,24 +31,35 @@ export class UserService {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) { }
 
-  register(user: User): Observable<User> {
-    const url = `/bookshop/user/register`;
-
-    return this.http.post<User>(url, user)
-      .pipe(
-        retry(3),
-        catchError(this.handleError)
-      );
+  /**
+   * 注册
+   * @param register 注册信息
+   */
+  register(register: any): Observable<Result> {
+    return this.http.post<Result>(`${this.url}/register`, register)
   }
 
-  login(user: User): Observable<number> {
-    const  url = `/bookshop/user/login`;
-    return this.http.post<number>(url, user)
-      .pipe(
-        retry(3),
-        catchError(this.handleError)
-      );
+  /**
+   * 登录
+   * @param user 用户的信息
+   */
+  login(user: User): Observable<Result> {
+    return this.http.post<Result>(`${this.url}/login`, user);
+  }
+
+  /**
+   * 退出登录
+   */
+  quitLogin() {
+    //清除存储的数据信息
+    localStorage.clear();
+    //跳转到登录页面
+    this.router.navigate(['/login']);
+
   }
 }

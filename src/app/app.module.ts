@@ -8,6 +8,7 @@ import {MatIconRegistry} from '@angular/material';
 import {loadSvgResource} from './utils/svg.utils';
 import {SharedModule} from './shared/shared.module';
 import {TestComponent} from './test/test.component';
+import {ThemeModule} from "./@theme/theme/theme.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import {TestComponent} from './test/test.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
