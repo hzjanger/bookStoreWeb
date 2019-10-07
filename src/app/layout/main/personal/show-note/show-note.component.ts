@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BookNoteService} from '../../../../service/book-note.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {ActivateRoutes} from '@angular/router/src/operators/activate_routes';
 import {BookNote} from '../../../../entity/book-note';
 import {DomSanitizer} from '@angular/platform-browser';
 import {Book} from '../../../../entity/book';
