@@ -20,13 +20,16 @@ import { CollectionDialogComponent } from './collection-dialog/collection-dialog
 import { NoteListComponent } from './personal/note-list/note-list.component';
 import { ShowNoteComponent } from './personal/show-note/show-note.component';
 import {HtmlPipe} from '../../pipe/HtmlPipe';
+import { PersonalInfoDialogComponent } from './personal/personal-info-dialog/personal-info-dialog.component';
+import {ThemeModule} from "../../@theme/theme/theme.module";
 
 @NgModule({
   imports: [
     CommonModule,
     MainRoutingModule,
     MatButtonModule,
-    SharedModule
+    SharedModule,
+    ThemeModule
   ],
   declarations: [
     LoginComponent,
@@ -45,10 +48,12 @@ import {HtmlPipe} from '../../pipe/HtmlPipe';
     CollectionDialogComponent,
     NoteListComponent,
     ShowNoteComponent,
-    HtmlPipe
+    HtmlPipe,
+    PersonalInfoDialogComponent
   ],
   entryComponents: [
-    CollectionDialogComponent
+    CollectionDialogComponent,
+    PersonalInfoDialogComponent
   ]
 })
 export class MainModule { }
