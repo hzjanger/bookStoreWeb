@@ -16,7 +16,7 @@ import {MessageServiceService} from '../../../../service/message-service.service
 })
 export class UpdateBookComponent implements OnInit {
 
-  private uploader: FileUploader = new FileUploader({
+  public uploader: FileUploader = new FileUploader({
     url: '/bookshop/book/uploadClient',
     method: 'POST',
     itemAlias: 'file'
