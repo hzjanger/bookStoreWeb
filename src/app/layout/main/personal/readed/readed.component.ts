@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BookCollectionService} from '../../../../service/book-collection.service';
 import {User} from '../../../../entity/user';
+import {LocalStorageInfo} from "../../../../utils/LocalStorageInfo";
 
 @Component({
   selector: 'app-readed',
@@ -22,7 +23,7 @@ export class ReadedComponent implements OnInit {
 
 
   getCollection() {
-    this.bookCollectionService.findCollectionBook("读过", +localStorage.getItem("userId"))
+    this.bookCollectionService.findCollectionBook("读过", LocalStorageInfo.userInfo.user_id)
       .subscribe((data: User[]) => {
         if (data.length != 0) {
           this.bookInfo = data[0].bookList;

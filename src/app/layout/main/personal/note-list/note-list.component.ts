@@ -3,6 +3,7 @@ import {BookNoteService} from '../../../../service/book-note.service';
 import {BookNote} from '../../../../entity/book-note';
 import {MatSnackBar} from '@angular/material';
 import {Router} from '@angular/router';
+import {LocalStorageInfo} from "../../../../utils/LocalStorageInfo";
 
 @Component({
   selector: 'app-note-list',
@@ -13,6 +14,7 @@ export class NoteListComponent implements OnInit {
 
   //用户存储用户收藏书籍信息
   bookNotes: BookNote[];
+
   constructor(private bookNoteService: BookNoteService,
               private snackBar: MatSnackBar,
               private router: Router) { }
@@ -28,9 +30,8 @@ export class NoteListComponent implements OnInit {
    * 查找用户所有的笔记
    */
   findUserNote() {
-    this.bookNoteService.findUserNote(+localStorage.getItem("userId"))
+    this.bookNoteService.findUserNote(LocalStorageInfo.userInfo.user_id)
       .subscribe((data: BookNote[]) => {
-        console.log(data);
         this.bookNotes = data;
       })
   }

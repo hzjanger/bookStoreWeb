@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {User} from "../../../../entity/user";
+import {LocalStorageInfo} from "../../../../utils/LocalStorageInfo";
 
 @Component({
   selector: 'app-personal-home',
@@ -6,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-home.component.scss']
 })
 export class PersonalHomeComponent implements OnInit {
+
+  /**
+   * 用户信息
+   */
+  userInfo: User;
 
   course_menu: any[] = [
     {icon: 'book', value: '想读', link: 'wantread'},
@@ -20,6 +27,8 @@ export class PersonalHomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    //获取存储的用户信息
+    this.userInfo = LocalStorageInfo.userInfo;
   }
 
 }

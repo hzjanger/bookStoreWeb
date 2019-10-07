@@ -3,6 +3,7 @@ import {BookCollectionService} from '../../../../service/book-collection.service
 import {User} from '../../../../entity/user';
 import {Router} from '@angular/router';
 import {Book} from '../../../../entity/book';
+import {LocalStorageInfo} from "../../../../utils/LocalStorageInfo";
 
 @Component({
   selector: 'app-reading',
@@ -25,7 +26,7 @@ export class ReadingComponent implements OnInit {
 
 
   getCollection() {
-    this.bookCollectionService.findCollectionBook("在读", +localStorage.getItem("userId"))
+    this.bookCollectionService.findCollectionBook("在读", LocalStorageInfo.userInfo.user_id)
       .subscribe((data: User[]) => {
         if (data.length != 0) {
           this.bookInfo = data[0].bookList;
