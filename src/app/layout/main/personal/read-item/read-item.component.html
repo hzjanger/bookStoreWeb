@@ -1,0 +1,21 @@
+<div class="row book-list" *ngFor="let data of userCollection">
+  <div class="col-2 my-col-1-8">
+    <img class="img-fluid" [src]="data.book.book_img" referrerpolicy ="never">
+  </div>
+  <div class="col-10 my-col-10-2">
+    <div class="book-list-right">
+      <p><a [routerLink]="['/bookinfo']" [queryParams]="{isbn: data.book.isbn}">{{data.book.book_name}}</a></p>
+      <p>
+        <nz-rate [ngModel]="data.userCollection.command_gradue" [nzDisabled]="true"></nz-rate>
+        <span>{{data.userCollection.command_gradue}}</span>
+      </p>
+
+      <div *ngIf="showWriteNote" class="book-list-bottom d-flex justify-content-between align-content-center">
+        <p class="author">
+          {{data.book.book_author}} / {{data.book.book_translator}} / {{data.book.book_press}} / {{data.book.publisher_time}} / {{data.book.book_prices}}元
+        </p>
+        <button mat-raised-button (click)="writeNote(data.book.isbn)">写笔记</button>
+      </div>
+    </div>
+  </div>
+</div>

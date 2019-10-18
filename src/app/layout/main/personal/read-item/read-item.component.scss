@@ -1,0 +1,36 @@
+.book-list {
+  padding-top: .5rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid #eff1f0;
+
+  .my-col-1-8 {
+    flex: 0 0 14%;
+    max-width: 14%;
+  }
+
+  .my-col-10-2 {
+    flex: 0 0 86%;
+    max-width: 86%;
+  }
+}
+
+.author {
+  color: #999999;
+  font-size: .9rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.book-list-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 1rem 0;
+
+  p {
+    margin-bottom: 0;
+  }
+}
