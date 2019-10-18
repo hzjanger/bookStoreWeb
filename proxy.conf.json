@@ -1,5 +1,17 @@
 {
-  "/bookshop":{
-    "target":"http://127.0.0.1:8081"
+
+  "/ticket": {
+    "target": "https://ssl.captcha.qq.com",
+    "secure": false,
+    "pathRewrite": {"^/ticket" : "https://ssl.captcha.qq.com/ticket"},
+    "changeOrigin": "true",
+    "logLevel": "debug"
+  },
+  "/bookshop": {
+    "target": "http://127.0.0.1:8081",
+    "secure": false,
+    "pathRewrite": {"^/bookshop" : "/bookshop"},
+    "changeOrigin": "true",
+    "logLevel": "debug"
   }
 }
