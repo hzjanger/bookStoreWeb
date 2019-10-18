@@ -45,3 +45,4 @@ export class EditorMdDirective implements AfterViewInit {
     return this.editor.getHtml();
   }
 }
+//plug

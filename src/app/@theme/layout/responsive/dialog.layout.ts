@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
         <span>{{dialogTitle}}</span>
         <div>
           <button mat-icon-button (click)="cancel()">
-            <mat-icon svgIcon="baseline-close"></mat-icon>
+            <mat-icon svgIcon="close"></mat-icon>
           </button>
         </div>
       </div>
