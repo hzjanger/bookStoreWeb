@@ -24,12 +24,18 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/editor.md/css/editormd.css"
+              "src/assets/editor.md/css/editormd.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -66,7 +72,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "bookStoreWeb:build"
+            "browserTarget": "bookStoreWeb:build",
+            "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
             "production": {
