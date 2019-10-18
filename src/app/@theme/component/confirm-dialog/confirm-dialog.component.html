@@ -1,0 +1,5 @@
+<dialog-layout [dialogTitle]="data.title"
+               (clickOk)="handleOk()"
+               (clickCancel)="cancel()">
+  <div [innerHTML]="data.content | html"></div>
+</dialog-layout>
